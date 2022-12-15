@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="A CSS Technical Documentation Page">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>
+      <h1>CSS Documentation</h1>
+    </header>
+    <a class="nav-link" href="#Introduction">
+      <p>Introduction</p>
+    </a>
+    <a class="nav-link" href="#What_should_you_already_know?">
+      <p>What should you already know?</p>
+    </a>
+    <a class="nav-link" href="#CSS_Syntax">
+      <p>CSS Syntax</p>
+    </a>
+    <a class="nav-link" href="#CSS_Selectors">
+      <p>CSS Selectors</p>
+    </a>
+    <a class="nav-link" href="#CSS_Colors">
+      <p>CSS Colors</p>
+    </a>
+    <a class="nav-link" href="#Reference">
+      <p>Reference</p>
+    </a>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>
+        <h2>Introduction</h2>
+      </header>
+      <p>
+        <span class="bold">CSS</span> - short for "<span class="bold">C</span>ascading <span class="bold">S</span>tyle
+        <span class="bold">S</span>heets", is a stylesheet language used to describe the presentation of a document
+        written in HTML. </br>
+        CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
+      </p>
+    </section>
+    <section class="main-section" id="What_should_you_already_know?">
+      <header>
+        <h2>What should you already know?</h2>
+      </header>
+      <p>
+        There are not many prerequisites required for learning CSS.</br>
+        The only one is:
+      </p>
+      <ul>
+        <li>basic knowledge of HTML.</li>
+      </ul>
+      <p>
+        If you don't know how to use HTML feel free to use <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML">this</a> tutorial.
+      </p>
+    </section>
+    <section class="main-section" id="CSS_Syntax">
+      <header>
+        <h2>CSS Syntax</h2>
+      </header>
+      <p>
+        A CSS rule consists of a selector and a declaration block.
+      </p>
+      <div class="syntax-container">
+        <div class="selector-container">
+          <p class="selector-desc">selector</p>
+          <div class="selector">
+            <p>h1</p>
+          </div>
+        </div>
+        <div class="declaration-container">
+          <p class="declaration-desc">declaration 1</p>
+          <p class="declaration-desc">declaration 2</p>
+          <div class="declaration">
+            <p>{ color: blue; font-size: 12px; }</p>
+          </div>
+        </div>
+      </div>
+      <p>
+        The selector points to the HTML element you want to style. </br>
+        The declaration block contains one or more declarations separated by semicolons. </br>
+        Each declaration includes a CSS property name and a value, separated by a colon. </br>
+        Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
+      </p>
+      <h3>Example</h3>
+      <p>In this example all p elements will be center-aligned, with a red text color:</p>
+      <code class="example-code">
+        p {</br>
+          color: red;</br>
+          text-align: center;</br>
+        }
+      </code>
+      <h4>Example Explained</h4>
+      <ul>
+        <li><code>p</code> is a selector in CSS (it points to the HTML element you want to style: &ltp&gt )</li>
+        <li><code>color</code> is a property, and <code>red</code> is the property value</li>
+        <li><code>text-align</code> is a property, and <code>center</code> is the property value</li>
+      </ul>
+    </section>
+    <section class="main-section" id="CSS_Selectors">
+      <header>
+        <h2>CSS Selectors</h2>
+      </header>
+      <article>
+        <p>CSS selectors are used to "find" (or select) the HTML elements you want to style.</p>
+        <p>We can divide CSS selectors into five categories:</p>
+        <ul>
+          <li>Simple selectors (select elements based on name, id, class)</li>
+          <li>Combinator selectors (select elements based on a specific relationship between them)</li>
+          <li>Pseudo-class selectors (select elements based on a certain state)</li>
+          <li>Pseudo-elements selectors (select and style a part of an element)</li>
+          <li>Attribute selectors (select elements based on an attribute or attribute value)</li>
+        </ul>
+      </article>
+      <article>
+        <h3>The CSS element selector</h3>
+        <p>The element selector selects HTML elements based on the element name.</p>
+        <h4>Example</h4>
+        <code class="example-code">
+        p {</br>
+          color: red;</br>
+          text-align: center;</br>
+        }
+      </code>
+      </article>
+      <article>
+        <h3>The CSS id selector</h3>
+        <p>The id selector uses the id attribute of an HTML element to select a specific element.</br>
+          The id of an element is unique within a page, so the id selector is used to select one unique element!</br>
+          To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+        </p>
+        <h4>Example</h4>
+        <p>The CSS rule below will be applied to the HTML element with id="para1":</p>
+        <code class="example-code">
+        #para1 {</br>
+          color: red;</br>
+          text-align: center;</br>
+        }
+      </code>
+        <p class="note"><span class="bold">NOTE:</span> An id name cannot start with a number!</p>
+      </article>
+      <article>
+        <h3>The CSS class Selector</h3>
+        <p>The class selector selects HTML elements with a specific class attribute.</br>
+          To select elements with a specific class, write a period (.) character, followed by the class name.
+        </p>
+        <h4>Example</h4>
+        <p>In this example all HTML elements with class="center" will be red and center-aligned:</p>
+        <code class="example-code">
+        .center {</br>
+          color: red;</br>
+          text-align: center;</br>
+        }
+      </code>
+        <p>You can also specify that only specific HTML elements should be affected by a class.</p>
+        <h4>Example</h4>
+        <p>In this example only &ltp&gt elements with class="center" will be red and center-aligned:</p>
+        <code class="example-code">
+        p.center {</br>
+          text-align: center;</br>
+          color: red;</br>
+        }
+      </code>
+        <p>HTML elements can also refer to more than one class.</p>
+        <h4>Example</h4>
+        <p>In this example the &ltp&gt element will be styled according to class="center" and to class="large":</p>
+        <code class="example-code">
+        &ltp class="center large"&gtThis paragraph refers to two classes.&lt/p&gt
+      </code>
+        <p class="note"><span class="bold">NOTE: </span>A class name cannot start with a number!
+      </article>
+      <article>
+        <h3>The CSS universal selector</h3>
+        <p>The CSS rule below will affect every HTML element on the page:</p>
+        <h4>Example</h4>
+        <p>The CSS rule below will affect every HTML element on the page:</p>
+        <code class="example-code">
+        * {</br>
+          text-align: center;</br>
+          color: blue;</br>
+        }
+      </code>
+      </article>
+      <article>
+        <h3>The CSS grouping selector</h3>
+        <p>The grouping selector selects all the HTML elements with the same style definitions.</br>
+          Look at the following CSS code (the h1, h2, and p elements have the same style definitions):
+        </p>
+        <code class="example-code">
+        h1 {</br>
+          text-align: center;</br>
+          color: red;</br>
+        }</br></br>
+        h2 {</br>
+          text-align: center;</br>
+          color: red;</br>
+        }</br></br>
+        p {</br>
+          text-align: center;</br>
+          color: red;</br>
+        }
+      </code>
+        <p>It will be better to group the selectors, to minimize the code.</br>
+          To group selectors, separate each selector with a comma.
+        </p>
+        <h4>Example</h4>
+        <p>In this example we have grouped the selectors from the code above:</p>
+        <code class="example-code">
+        h1, h2, p {</br>
+          text-align: center;</br>
+          color: red;</br>
+        }
+      </code>
+      </article>
+      <article>
+        <h4>All CSS Simple Selectors</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Selector</th>
+              <th>Example</th>
+              <th>Example description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="gray">
+              <td class="italic">#id</td>
+              <td>#firstname</td>
+              <td>Selects the element with id="firstname"</td>
+            </tr>
+            <tr>
+              <td class="italic">.class</td>
+              <td>.intro</td>
+              <td>Selects the element with class="intro"</td>
+            </tr>
+            <tr class="gray">
+              <td class="italic">element.class</td>
+              <td>p.intro</td>
+              <td>Selects only &ltp&gt elements with class="intro"</td>
+            </tr>
+            <tr>
+              <td class="italic">*</td>
+              <td>*</td>
+              <td>Selects all elements</td>
+            </tr>
+            <tr class="gray">
+              <td class="italic">element</td>
+              <td>p</td>
+              <td>Selects all &ltp&gt elements</td>
+            </tr>
+            <tr>
+              <td class="italic">element, element,...</td>
+              <td>div, p</td>
+              <td>Selects all &ltdiv&gt elements and all &ltp&gt elements</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+    </section>
+    <section class="main-section" id="CSS_Colors">
+      <header>
+        <h2>CSS Colors</h2>
+      </header>
+      <article>
+      <p>Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</p>
+      </article>
+      <article>
+        <h3>CSS Color Names</h3>
+        <p>In CSS, a color can be specified by using a predefined color name:</p>
+        <div class="color-container">
+          <div class="color tomato">Tomato</div>
+          <div class="color orange">Orange</div>
+          <div class="color dodgerBlue">DodgerBlue</div>
+          <div class="color mediumSeaGreen">MediumSeaGreen</div>
+          <div class="color gray">Gray</div>
+          <div class="color slateBlue">SlateBlue</div>
+          <div class="color violet">Violet</div>
+          <div class=" color lightGray">LightGray</div>
+        </div>
+      </article>
+      <article>
+      <h3>CSS Background Color</h3>
+        <p>You can set the background color for HTML elements:</p>
+        <div class="helloWorld dodgerBlue">Hello World</div>
+        <h4>Example</h4>
+        <p>HTML:</p>
+        <code class="example-code">
+          &ltp class="helloWorld"&gtHello World&lt/p&gt
+        </code>
+        <p>CSS:</p>
+        <code class="example-code">
+          .helloWorld {</br>
+            background-color: dodgerBlue;</br>
+          }
+        </code>
+      </article>
+      <article>
+        <h3>Color wheel</h3>
+        <p>My own addition to the documentation : )</p>
+        <div class="color-wheel"></div>
+      </article>
+    </section>
+    <section class="main-section" id="Reference">
+      <header>
+        <h2>Reference</h2>
+      </header>
+      <p>All the content of that page comes from:<p>
+        <ul>
+          <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
+        </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,424 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  font-family: Calibri, Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+nav {
+  width: 300px;
+  border-right: 3px solid #000000;
+  flex-shrink: 0;
+  position: fixed;
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+  padding-left: 300px;
+}
+
+h2,
+h3,
+h4 {
+  margin: 1rem;
+}
+
+h4 {
+  font-size: 1.17em;
+}
+
+.example-code {
+  display: block;
+  background-color: #F4F4F4;
+  text-align: left;
+  margin: 1rem 2rem;
+  padding: 0.8rem;
+  color: inherit;
+  border-radius: 10px;
+}
+
+code {
+  background-color: #F4F4F4;
+  padding: 1px;
+  color: red;
+}
+
+section {
+  border-bottom: 1px solid #050505;
+}
+
+nav header {
+  border-bottom: 2px solid #050505;
+}
+
+nav p {
+  font-size: 18px;
+  border-bottom: 1px solid #050505;
+  margin: 0;
+  padding: 0.8em 1em;
+}
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-link:hover>p {
+  background-color: #F4F4F4;
+}
+
+p {
+  margin: 1rem 2rem;
+  line-height: 1.3rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+ul {
+  margin: -0.5rem 2rem 1rem;
+}
+
+a {
+  color: blue;
+}
+
+.selector {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  font-size: 2rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.selector p,
+.declaration p {
+  margin: 0;
+  position: relative;
+  top: 15px;
+  left: 8px;
+  color: white;
+}
+
+.declaration {
+  width: 400px;
+  height: 50px;
+  background-color: green;
+  font-size: 2rem;
+  border-radius: 10px;
+}
+
+.syntax-container {
+  margin: 1rem 2rem;
+  width: 500px;
+  height: 100px;
+}
+
+
+.declaration-desc {
+  display: inline-block;
+  margin: 0 10% 1em;
+}
+
+.selector-container,
+.declaration-container {
+  display: inline-block;
+}
+
+.selector-desc {
+  margin: 0 0 1em;
+}
+
+.selector-desc::after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-top-color: black;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-width: 10px 10px 10px 10px;
+  position: relative;
+  top: 30px;
+  left: -37px;
+}
+
+.declaration-desc::after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-top-color: black;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-width: 10px 10px 10px 10px;
+  position: relative;
+  top: 30px;
+  left: -55px;
+}
+
+@media (max-width: 800px) {
+
+  main {
+    padding-left: 0;
+  }
+
+  nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: 3px solid #000000;
+    height: unset;
+    position: static;
+  }
+}
+
+.note {
+  background-color: #F7F277;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 2em 2em;
+}
+
+table {
+  margin: 1rem 2rem;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+}
+
+.italic {
+  font-style: italic;
+}
+
+td,
+tr,
+th {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #000000;
+}
+
+th {
+  text-align: left;
+}
+
+tr.gray {
+  background-color: #F4F4F4;
+}
+
+article {
+  border-bottom: 1px solid #BBBBBE;
+}
+
+article:last-of-type {
+  border-bottom: none;
+}
+
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: clamp(350px, 50%, 1000px);
+  margin-left: 1em;
+}
+
+.color {
+  display: flex;
+  min-width: 130px;
+  width: 20%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+
+.tomato {
+  background-color: tomato;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.dodgerBlue {
+  background-color: dodgerblue;
+}
+
+.mediumSeaGreen {
+  background-color: mediumseagreen;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.slateBlue {
+  background-color: slateblue;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.lightGray {
+  background-color: lightgray;
+}
+
+@media (max-width: 350px) {
+
+  /* .color {
+      min-width: unset;
+      width: 100%;
+    } */
+
+  .color-container {
+    flex-direction: column;
+  }
+
+  .selector {
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
+  .selector p,
+  .declaration p {
+    margin: 0;
+    position: relative;
+    top: 10.5px;
+    left: 5.6px;
+    color: white;
+  }
+
+  .declaration {
+    width: 280px;
+    height: 35px;
+    background-color: green;
+    font-size: 1.4rem;
+    border-radius: 10px;
+  }
+
+  .syntax-container {
+    margin: 1rem 1rem;
+    width: 350px;
+    height: 70px;
+  }
+
+
+  .declaration-desc {
+    display: inline-block;
+    margin: 0 5% 1em;
+  }
+
+  .selector-container,
+  .declaration-container {
+    display: inline-block;
+  }
+
+  .selector-desc {
+    margin: 0 -0.5em 1em;
+  }
+
+  table {
+    margin: 1em auto;
+  }
+
+}
+
+@media (min-width: 350px) and (max-width: 1500px) {
+
+  .color {
+    min-width: unset;
+    width: 40%;
+  }
+
+  .selector {
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
+  .selector p,
+  .declaration p {
+    margin: 0;
+    position: relative;
+    top: 10.5px;
+    left: 5.6px;
+    color: white;
+  }
+
+  .declaration {
+    width: 280px;
+    height: 35px;
+    background-color: green;
+    font-size: 1.4rem;
+    border-radius: 10px;
+  }
+
+  .syntax-container {
+    margin: 1rem 2rem;
+    width: 350px;
+    height: 70px;
+  }
+
+
+  .declaration-desc {
+    display: inline-block;
+    margin: 0 5% 1em;
+  }
+
+  .selector-container,
+  .declaration-container {
+    display: inline-block;
+  }
+
+  .selector-desc {
+    margin: 0 -0.5em 1em;
+  }
+
+  table {
+    margin: 1em 1em;
+  }
+
+}
+
+.helloWorld {
+  width: 80%;
+  font-size: 2rem;
+  padding: 5px;
+  text-align: center;
+  margin: 1rem 2rem;
+  color: #ffffff;
+}
+
+.color-wheel {
+  margin: 1em 2em;
+  width: 200px;
+  height: 200px;
+  background:
+    repeating-conic-gradient(hsl(0, 99%, 50%) 0deg, hsl(36, 100%, 50%) 36deg, hsl(72, 100%, 50%) 108deg, hsl(144, 100%, 50%) 144deg, hsl(180, 100%, 50%) 180deg, hsl(216, 100%, 50%) 216deg, hsl(252, 100%, 50%) 252deg, hsl(288, 100%, 50%) 288deg, hsl(324, 100%, 50%) 324deg, hsl(360, 100%, 50%) 360deg);
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
